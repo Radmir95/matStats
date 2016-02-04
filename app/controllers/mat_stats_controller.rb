@@ -33,7 +33,7 @@ class MatStatsController < ApplicationController
     workbook = RubyXL::Workbook.new
     sheet1(workbook)
     sheet2(workbook)
-    #sheet3(workbook)
+    sheet3(workbook)
 
     workbook.write("#{current_user.email}.xlsx")
     send_file("#{current_user.email}.xlsx")
