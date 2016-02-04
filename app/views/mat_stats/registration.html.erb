@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<style type="text/css">
+
+	
+	
+</style>
+
+	<head>
+		<meta charset="utf8">
+		<title>Матстат</title>
+	</head>
+
+	<body>
+		<%= form_for :enterUser, url: new_user_path do |f| %>
+
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              Для продолжения исправте следующие ошибки:
+            </h2>
+            <ul>
+               <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+
+  			<p>
+    		<%= f.label :Имя %><br>
+    		<%= f.text_field :first_name %>
+  			</p>
+ 
+ 			<p>
+    		<%= f.label :Фамилия %><br>
+    		<%= f.text_field(:last_name) %>
+  			</p>
+ 			
+  			<p>
+    		<%= f.label :Почта %><br>
+    		<%= f.text_field(:email) %>
+  			</p>
+
+  			<p>
+    		<%= f.label :"Пароль" %><br>
+    		<%= f.password_field(:password) %>
+  			</p>
+
+  			<p>
+    		<%= f.label :"Повторите пароль" %><br>
+    		<%= f.password_field(:password_confirmation) %>
+  			</p>
+
+  			<p>
+    		<%= f.label :"Дата рождения" %><br>
+    		<%= f.text_field(:birth_date) %>
+  			</p>
+
+  			<p>
+    		<%= f.submit text = "Зарегистрироваться"%>
+  			</p>
+		<% end %>
+
+		
+	</body>
+
+</html>

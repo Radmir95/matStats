@@ -1,0 +1,61 @@
+<!doctype html>
+
+<style>
+	body
+{
+background: url(images/background.png) repeat;
+padding:0; margin:0;
+}
+  #content{
+    float:left;
+  }
+
+  #sidebar{
+  float: right;
+    padding: 16px;
+  }
+  .close{
+    margin-left: 364px;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+</style>
+
+<html>
+
+	<head>
+	  <meta charset="utf8">
+	</head>
+
+  <body>
+
+    <div id="content">
+      <h1>Выбирите сервис</h1>
+      <%= link_to "Математическая статистика",controller: "mat_stats", action: "index" %>
+    </div>
+      <div id="sidebar">
+          <% if (!signed_in?) %>
+          <%= form_for(:session, url: sessions_path) do |f| %>
+
+            <p><%= f.label :email %>
+              <%= f.text_field :email %></p>
+
+            <p> <%= f.label :password %>
+              <%= f.password_field :password %></p>
+
+            <%= f.submit "Sign in" %>
+        <% end %>
+
+
+    <%= link_to "Регистрация",controller: "mat_stats", action: "registration" %>
+    <%= link_to "Забыли пароль ?",controller: "mat_stats", action: "forget" %>
+            <% else %>
+        <%=sprintf("Привет,") %>
+            <%=current_user.first_name%>
+            <%= link_to "Выйти", controller: "sessions", action: "destroy" %>
+        <%end %>
+
+  </div>
+
+  </body>
+</html>

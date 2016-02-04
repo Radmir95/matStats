@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Почта"
+        birth_date: "Дата рождения"
+        password: "Пароль"
