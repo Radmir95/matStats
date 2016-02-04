@@ -4,7 +4,7 @@ gem 'validates_email_format_of'
 
 gem 'rails', '4.1.8'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'sass-rails', '~> 4.0.3'
 
